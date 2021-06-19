@@ -5,8 +5,130 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Forms</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    
+    <form action="#" method="GET">
+        <fieldset>
+            <legend>Input text types</legend>
+            <!-- первый способ -->
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Firstname" autofocus required pattern="[A-Z][a-z]{0,19}(-[A-Z][a-z]{0,19})?">
+            </br>
+            <!-- второй способ -->
+            <label>
+                <span>Surname</span>
+                <input type="text">
+            </label>   
+            </br>
+            <label>
+                <span>Email</span>
+                <input type="email" placeholder="anymail@gmail.com" required>
+            </label>
+            </br>
+            <label>
+                <span>Password</span>
+                <input type="password">
+            </label>
+            </br>
+            <label>
+                <span>URL</span>
+                <input type="URL">
+            </label>
+            </br>
+            <label>
+                <span>Search</span>
+                <input type="search">
+            </label>
+            </br>
+            <label>
+                <span>Tel.</span>
+                <input type="tel" autocomplete="tel">
+            </label>
+    </fieldset>    
+
+    <fieldset>
+        <legend>Date/Time</legend>
+        <input type="date">
+        <input type="datetime">
+        <input type="datetime-local">
+        <input type="time">
+        </br>
+        <input type="month">
+        <input type="week">
+    </fieldset>
+
+    <fieldset>
+        <legend>Others Input</legend>
+        <label>
+            <span>Choose File</span>
+            <input type="file" multiple>
+        </label>
+        </br>
+        <label>
+            <span>Color Picker</span>
+            <input type="color">
+        </label>
+        </br>
+    </fieldset>
+
+    <label>
+        <span>Hidden</span>
+        <input type="hidden" value="Earth">
+    </label>
+    </br>
+
+    <fieldset>
+        <legend>Numbers</legend>
+        <label>
+            <span>Number</span>
+            <input type="number" min="1" max="100">
+        </label>
+        <label>
+            <span>Range</span>
+            <input type="range" id="rangeVal" min="1" max="100" step="0.5" value="25">
+            <label for="rangeVal" id="rangeLabel"> 25
+                <script>
+                    document.getElementById('rangeVal').onchange = (e) => {
+                    document.getElementById('rangeLabel').innerText = document.getElementById('rangeVal').value;
+                    }
+                </script>
+            </label>
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Preferences</legend>
+        <input type="checkbox" name="prefs" value="sport" id="idSport" checked>
+        <label for="idSport">Sport News</label>
+        <br>
+        <input type="checkbox" name="prefs" value="it" id="idIt">
+        <label for="idIt">IT News</label>
+        <br>
+        <input type="checkbox" name="prefs" value="education" id="idEducation">
+        <label for="idEducation">Education News</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Buttons Types</legend>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+        <input type="button" value="inputButton">
+        <input type="submit" value="inputSubmit">
+        <input type="reset" value="inputReset">
+        <input type="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8EV9KtA5i7tU34KrLYWuKIb_JHLoViyOqQ&usqp=CAU" alt="send" style="width: 30px; height: 30px;">
+    </fieldset>
+
+    <fieldset>
+        <legend>Gender</legend>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female">
+        <label for="other">Other</label>
+        <input type="radio" name="gender" id="other">
+        </fieldset>
+    </form>
 </body>
 </html>
